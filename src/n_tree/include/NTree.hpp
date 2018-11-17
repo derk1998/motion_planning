@@ -4,6 +4,7 @@
 #include <memory>
 
 #include <Box.hpp>
+#include <NTreeElement.hpp>
 
 template <typename T, std::size_t D>
 class NTree
@@ -15,7 +16,7 @@ class NTree
     NTree& operator=(const NTree&) = delete;
     ~NTree() = default;
 
-    bool insert(const Box<T, D>& obstacle);
+    bool insert(const NTreeElement& element);
 
     const Box<T, D>& getBox() const;
 
@@ -27,7 +28,7 @@ class NTree
     NTree* parent;
     bool occupied;
     bool _split;
-    std::vector<Box<T, D>> elements;
+    std::vector<NTreeElement> elements;
 };
 
 template <typename T, std::size_t D> inline std::ostream &operator<<(std::ostream &os, const NTree<T, D>& rhs)

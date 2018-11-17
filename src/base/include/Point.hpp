@@ -1,6 +1,7 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
+#include <ostream>
 #include <array>
 
 template <typename T, std::size_t N>

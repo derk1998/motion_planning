@@ -11,9 +11,9 @@ class Box
     public:
     explicit Box(const Point<T, D>& p1, const Point<T, D>& p2);
 
-    Point<T, D>& operator[](std::size_t index);
-
     bool fits(const Box<T, D>& otherBox) const;
+
+    Point<T, D>& operator[](std::size_t index);
 
     T area() const;
 

@@ -1,51 +1,55 @@
 
-# Created by https://www.gitignore.io/api/c++,cmake,linux,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=c++,cmake,linux,visualstudiocode
+# Created by https://www.gitignore.io/api/linux,windows,autotools,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=linux,windows,autotools,visualstudiocode
 
-### C++ ###
-# Prerequisites
-*.d
+### Autotools ###
+# http://www.gnu.org/software/automake
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+Makefile.in
+/ar-lib
+/mdate-sh
+/py-compile
+/test-driver
+/ylwrap
 
-# Precompiled Headers
-*.gch
-*.pch
+# http://www.gnu.org/software/autoconf
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+autom4te.cache
+/autoscan.log
+/autoscan-*.log
+/aclocal.m4
+/compile
+/config.guess
+/config.h.in
+/config.log
+/config.status
+/config.sub
+/configure
+/configure.scan
+/depcomp
+/install-sh
+/missing
+/stamp-h1
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-### CMake ###
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
 Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
+
+# https://www.gnu.org/software/libtool/
+
+/ltmain.sh
+
+# http://www.gnu.org/software/texinfo
+
+/texinfo.tex
+
+# http://www.gnu.org/software/m4/
+
+m4/libtool.m4
+m4/ltoptions.m4
+m4/ltsugar.m4
+m4/ltversion.m4
+m4/lt~obsolete.m4
+
+### Autotools Patch ###
 
 ### Linux ###
 *~
@@ -65,18 +69,36 @@ CTestTestfile.cmake
 ### VisualStudioCode ###
 .vscode/*
 
-### Build directory
-build
-
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
 
-# Ignore the build and lib dirs
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Don't push build folder
 build
-lib/*
 
-# Ignore any executables
-bin/*
-
-# End of https://www.gitignore.io/api/c++,cmake,linux,visualstudiocode
+# End of https://www.gitignore.io/api/linux,windows,autotools,visualstudiocode

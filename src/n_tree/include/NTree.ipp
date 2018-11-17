@@ -5,8 +5,17 @@ NTree<T, D>::NTree(const Box<T, D>& aBox, NTree* parent /* = nullptr*/) : box(aB
 {
 }
 
+//neighbour checking
+
+/*
+
+find cell of S
+add cell to set
+
+*/
+
 template <typename T, std::size_t D>
-bool NTree<T, D>::insert(const Box<T, D>& element)
+bool NTree<T, D>::insert(const NTreeElement& element)
 {
     if(!box.fits(element))
     {

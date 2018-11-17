@@ -1,0 +1,9 @@
+bin_PROGRAMS = app
+app_SOURCES = src/main.cpp
+app_CPPFLAGS = $(AM_CPPFLAGS) $(MOTION_PLANNING_CPPFLAGS)
+
+app_CFLAGS = $(AM_CFLAGS) $(libbase_la_CFLAGS) $(MOTION_PLANNING_CFLAGS)
+app_CXXFLAGS = $(AM_CXXFLAGS) $(libbase_la_CXXFLAGS) $(MOTION_PLANNING_CXXFLAGS)
+app_LDFLAGS = $(AM_LDFLAGS) $(MOTION_PLANNING_LD_FLAGS)
+app_LDADD = $(AM_LIBADD) ../base/libbase.la
+app_DEPENDENCIES = ../base/libbase.la
