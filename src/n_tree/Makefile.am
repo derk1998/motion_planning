@@ -7,5 +7,5 @@ include_HEADERS = include/NTree.hpp \
                   include/NTreeBox.hpp \
                   include/NTreePoint.hpp
 libn_tree_la_LDFLAGS = -version-info 0:0:0
-libn_tree_la_LIBADD = $(AM_LIBADD) ../base/libbase.la
-libn_tree_la_DEPENDENCIES = ../base/libbase.la
+libn_tree_la_LIBADD = $(AM_LIBADD) $(libbase_la_DESTINATION)
+libn_tree_la_DEPENDENCIES = $(libbase_la_DESTINATION)

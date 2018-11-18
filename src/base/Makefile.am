@@ -6,4 +6,5 @@ include_HEADERS = include/Box.hpp \
                   include/Point.hpp \
                   include/Box.ipp \
                   include/Point.ipp
-libbase_la_LDFLAGS = -version-info 3:12:1
+libbase_la_LDFLAGS = -version-info 0:0:0
+libbase_la_DESTINATION = $(abs_srcdir)/$(lib_LTLIBRARIES)
