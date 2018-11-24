@@ -9,3 +9,4 @@ include_HEADERS = include/NTree.hpp \
 libn_tree_la_LDFLAGS = -version-info 0:0:0
 libn_tree_la_LIBADD = $(AM_LIBADD) $(libbase_la_DESTINATION)
 libn_tree_la_DEPENDENCIES = $(libbase_la_DESTINATION)
+libn_tree_la_DESTINATION = $(abs_srcdir)/$(lib_LTLIBRARIES)
