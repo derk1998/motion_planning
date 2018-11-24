@@ -100,5 +100,6 @@ $RECYCLE.BIN/
 
 # Don't push build folder
 build
+build-aux
 
 # End of https://www.gitignore.io/api/linux,windows,autotools,visualstudiocode
