@@ -3,10 +3,10 @@
 
 TEST(PointSuite, lessThanOperator2D)
 {
-    Point<unsigned short, 2> p0;
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 2);
+    Base::Point<unsigned short, 2> p0;
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 2);
 
     ASSERT_EQ(p1 < p2, true);
     ASSERT_EQ(p3 < p1, false);
@@ -15,9 +15,9 @@ TEST(PointSuite, lessThanOperator2D)
 
 TEST(PointSuite, lessThanOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 1);
-    Point<unsigned short, 3> p2(10, 20, 10);
-    Point<unsigned short, 3> p3(4, 2, 5);
+    Base::Point<unsigned short, 3> p1(4, 1, 1);
+    Base::Point<unsigned short, 3> p2(10, 20, 10);
+    Base::Point<unsigned short, 3> p3(4, 2, 5);
 
     ASSERT_EQ(p1 < p2, true);
     ASSERT_EQ(p3 < p1, false);
@@ -26,9 +26,9 @@ TEST(PointSuite, lessThanOperator3D)
 
 TEST(PointSuite, equalsOperator2D)
 {
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 1);
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 1);
 
     ASSERT_EQ(p1 == p2, false);
     ASSERT_EQ(p1 == p1, true);
@@ -37,9 +37,9 @@ TEST(PointSuite, equalsOperator2D)
 
 TEST(PointSuite, equalsOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 2);
-    Point<unsigned short, 3> p2(10, 20, 1);
-    Point<unsigned short, 3> p3(4, 1, 2);
+    Base::Point<unsigned short, 3> p1(4, 1, 2);
+    Base::Point<unsigned short, 3> p2(10, 20, 1);
+    Base::Point<unsigned short, 3> p3(4, 1, 2);
 
     ASSERT_EQ(p1 == p2, false);
     ASSERT_EQ(p1 == p1, true);
@@ -49,17 +49,17 @@ TEST(PointSuite, equalsOperator3D)
 TEST(PointSuite, equalsOperatorFloat)
 {
     float d2 = 1 / std::sqrt(5) / std::sqrt(5);
-    Point<float, 3> p1(0.2, 0.2, 0.2);
-    Point<float, 3> p2(d2, d2, d2);
+    Base::Point<float, 3> p1(0.2, 0.2, 0.2);
+    Base::Point<float, 3> p2(d2, d2, d2);
 
     ASSERT_EQ(p1 == p2, true);
 }
 
 TEST(PointSuite, notEqualsOperator2D)
 {
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 1);
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 1);
 
     ASSERT_EQ(p1 != p2, true);
     ASSERT_EQ(p1 != p1, false);
@@ -68,9 +68,9 @@ TEST(PointSuite, notEqualsOperator2D)
 
 TEST(PointSuite, notEqualsOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 2);
-    Point<unsigned short, 3> p2(10, 20, 1);
-    Point<unsigned short, 3> p3(4, 1, 2);
+    Base::Point<unsigned short, 3> p1(4, 1, 2);
+    Base::Point<unsigned short, 3> p2(10, 20, 1);
+    Base::Point<unsigned short, 3> p3(4, 1, 2);
 
     ASSERT_EQ(p1 != p2, true);
     ASSERT_EQ(p1 != p1, false);
@@ -79,10 +79,10 @@ TEST(PointSuite, notEqualsOperator3D)
 
 TEST(PointSuite, lessThanOrEqualsOperator2D)
 {
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 2);
-    Point<unsigned short, 2> p4(4, 1);
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 2);
+    Base::Point<unsigned short, 2> p4(4, 1);
 
     ASSERT_EQ(p1 <= p2, true);
     ASSERT_EQ(p3 <= p1, false);
@@ -92,10 +92,10 @@ TEST(PointSuite, lessThanOrEqualsOperator2D)
 
 TEST(PointSuite, lessThanOrEqualsOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 1);
-    Point<unsigned short, 3> p2(10, 20, 10);
-    Point<unsigned short, 3> p3(4, 2, 5);
-    Point<unsigned short, 3> p4(4, 1, 1);
+    Base::Point<unsigned short, 3> p1(4, 1, 1);
+    Base::Point<unsigned short, 3> p2(10, 20, 10);
+    Base::Point<unsigned short, 3> p3(4, 2, 5);
+    Base::Point<unsigned short, 3> p4(4, 1, 1);
 
     ASSERT_EQ(p1 <= p2, true);
     ASSERT_EQ(p3 <= p1, false);
@@ -105,9 +105,9 @@ TEST(PointSuite, lessThanOrEqualsOperator3D)
 
 TEST(PointSuite, greaterThanOperator2D)
 {
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 2);
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 2);
 
     ASSERT_EQ(p1 > p2, false);
     ASSERT_EQ(p3 > p1, true);
@@ -116,9 +116,9 @@ TEST(PointSuite, greaterThanOperator2D)
 
 TEST(PointSuite, greaterThanOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 1);
-    Point<unsigned short, 3> p2(10, 20, 10);
-    Point<unsigned short, 3> p3(4, 2, 5);
+    Base::Point<unsigned short, 3> p1(4, 1, 1);
+    Base::Point<unsigned short, 3> p2(10, 20, 10);
+    Base::Point<unsigned short, 3> p3(4, 2, 5);
 
     ASSERT_EQ(p1 > p2, false);
     ASSERT_EQ(p3 > p1, true);
@@ -127,10 +127,10 @@ TEST(PointSuite, greaterThanOperator3D)
 
 TEST(PointSuite, greaterThanOrEqualsOperator2D)
 {
-    Point<unsigned short, 2> p1(4, 1);
-    Point<unsigned short, 2> p2(10, 20);
-    Point<unsigned short, 2> p3(4, 2);
-    Point<unsigned short, 2> p4(4, 1);
+    Base::Point<unsigned short, 2> p1(4, 1);
+    Base::Point<unsigned short, 2> p2(10, 20);
+    Base::Point<unsigned short, 2> p3(4, 2);
+    Base::Point<unsigned short, 2> p4(4, 1);
 
     ASSERT_EQ(p1 >= p2, false);
     ASSERT_EQ(p3 >= p1, true);
@@ -140,10 +140,10 @@ TEST(PointSuite, greaterThanOrEqualsOperator2D)
 
 TEST(PointSuite, greaterThanOrEqualsOperator3D)
 {
-    Point<unsigned short, 3> p1(4, 1, 1);
-    Point<unsigned short, 3> p2(10, 20, 10);
-    Point<unsigned short, 3> p3(4, 2, 5);
-    Point<unsigned short, 3> p4(4, 1, 1);
+    Base::Point<unsigned short, 3> p1(4, 1, 1);
+    Base::Point<unsigned short, 3> p2(10, 20, 10);
+    Base::Point<unsigned short, 3> p3(4, 2, 5);
+    Base::Point<unsigned short, 3> p4(4, 1, 1);
 
     ASSERT_EQ(p1 >= p2, false);
     ASSERT_EQ(p3 >= p1, true);
@@ -161,9 +161,9 @@ TEST(PointSuite, additionOperator2DPoint)
     unsigned short xTotal = x1 + x2;
     unsigned short yTotal = y1 + y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     ASSERT_EQ(p1 + p2, p3);
 }
@@ -177,8 +177,8 @@ TEST(PointSuite, additionOperator2DScalar)
     unsigned short xTotal = x1 + scalar;
     unsigned short yTotal = y1 + scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     ASSERT_EQ(p1 + scalar, p2);
 }
@@ -193,9 +193,9 @@ TEST(PointSuite, subtractionOperator2DPoint)
     unsigned short xTotal = x1 - x2;
     unsigned short yTotal = y1 - y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     ASSERT_EQ(p1 - p2, p3);
 }
@@ -209,8 +209,8 @@ TEST(PointSuite, subtractionOperator2DScalar)
     unsigned short xTotal = x1 - scalar;
     unsigned short yTotal = y1 - scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     ASSERT_EQ(p1 - scalar, p2);
 }
@@ -225,9 +225,9 @@ TEST(PointSuite, additionAssignmentOperator2DPoint)
     unsigned short xTotal = x1 + x2;
     unsigned short yTotal = y1 + y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     p1 += p2;
 
@@ -243,8 +243,8 @@ TEST(PointSuite, additionAssignmentOperator2DScalar)
     unsigned short xTotal = x1 + scalar;
     unsigned short yTotal = y1 + scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     p1 += scalar;
 
@@ -261,9 +261,9 @@ TEST(PointSuite, subtractionAssignmentOperator2DPoint)
     unsigned short xTotal = x1 - x2;
     unsigned short yTotal = y1 - y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     p1 -= p2;
 
@@ -279,8 +279,8 @@ TEST(PointSuite, subtractionAssignmentOperator2DScalar)
     unsigned short xTotal = x1 - scalar;
     unsigned short yTotal = y1 - scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     p1 -= scalar;
 
@@ -300,9 +300,9 @@ TEST(PointSuite, additionOperator3DPoint)
     unsigned short yTotal = y1 + y2;
     unsigned short zTotal = z1 + z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 + p2, p3);
 }
@@ -318,8 +318,8 @@ TEST(PointSuite, additionOperator3DScalar)
     unsigned short yTotal = y1 + scalar;
     unsigned short zTotal = z1 + scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 + scalar, p2);
 }
@@ -337,9 +337,9 @@ TEST(PointSuite, subtractionOperator3DPoint)
     unsigned short yTotal = y1 - y2;
     unsigned short zTotal = z1 - z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 - p2, p3);
 }
@@ -355,8 +355,8 @@ TEST(PointSuite, subtractionOperator3DScalar)
     unsigned short yTotal = y1 - scalar;
     unsigned short zTotal = z1 - scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 - scalar, p2);
 }
@@ -374,9 +374,9 @@ TEST(PointSuite, additionAssignmentOperator3DPoint)
     unsigned short yTotal = y1 + y2;
     unsigned short zTotal = z1 + z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     p1 += p2;
 
@@ -394,8 +394,8 @@ TEST(PointSuite, additionAssignmentOperator3DScalar)
     unsigned short yTotal = y1 + scalar;
     unsigned short zTotal = z1 + scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     p1 += scalar;
 
@@ -415,9 +415,9 @@ TEST(PointSuite, subtractionAssignmentOperator3DPoint)
     unsigned short yTotal = y1 - y2;
     unsigned short zTotal = z1 - z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     p1 -= p2;
 
@@ -435,8 +435,8 @@ TEST(PointSuite, subtractionAssignmentOperator3DScalar)
     unsigned short yTotal = y1 - scalar;
     unsigned short zTotal = z1 - scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     p1 -= scalar;
 
@@ -453,9 +453,9 @@ TEST(PointSuite, multiplicationOperator2DPoint)
     unsigned short xTotal = x1 * x2;
     unsigned short yTotal = y1 * y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     ASSERT_EQ(p1 * p2, p3);
 }
@@ -469,8 +469,8 @@ TEST(PointSuite, multiplicationOperator2DScalar)
     unsigned short xTotal = x1 * scalar;
     unsigned short yTotal = y1 * scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     ASSERT_EQ(p1 * scalar, p2);
 }
@@ -488,9 +488,9 @@ TEST(PointSuite, multiplicationOperator3DPoint)
     unsigned short yTotal = y1 * y2;
     unsigned short zTotal = z1 * z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 * p2, p3);
 }
@@ -506,8 +506,8 @@ TEST(PointSuite, multiplicationOperator3DScalar)
     unsigned short yTotal = y1 * scalar;
     unsigned short zTotal = z1 * scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 * scalar, p2);
 }
@@ -522,9 +522,9 @@ TEST(PointSuite, divisionOperator2DPoint)
     unsigned short xTotal = x1 / x2;
     unsigned short yTotal = y1 / y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     ASSERT_EQ(p1 / p2, p3);
 }
@@ -538,8 +538,8 @@ TEST(PointSuite, divisionOperator2DScalar)
     unsigned short xTotal = x1 / scalar;
     unsigned short yTotal = y1 / scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     ASSERT_EQ(p1 / scalar, p2);
 }
@@ -557,9 +557,9 @@ TEST(PointSuite, divisionOperator3DPoint)
     unsigned short yTotal = y1 / y2;
     unsigned short zTotal = z1 / z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 / p2, p3);
 }
@@ -575,8 +575,8 @@ TEST(PointSuite, divisionOperator3DScalar)
     unsigned short yTotal = y1 / scalar;
     unsigned short zTotal = z1 / scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     ASSERT_EQ(p1 / scalar, p2);
 }
@@ -590,8 +590,8 @@ TEST(PointSuite, multiplicationAssignmentOperator2DScalar)
     unsigned short xTotal = x1 * scalar;
     unsigned short yTotal = y1 * scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     p1 *= scalar;
 
@@ -608,9 +608,9 @@ TEST(PointSuite, multiplicationAssignmentOperator2DPoint)
     unsigned short xTotal = x1 * x2;
     unsigned short yTotal = y1 * y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     p1 *= p2;
 
@@ -628,8 +628,8 @@ TEST(PointSuite, multiplicationAssignmentOperator3DScalar)
     unsigned short yTotal = y1 * scalar;
     unsigned short zTotal = z1 * scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     p1 *= scalar;
 
@@ -649,9 +649,9 @@ TEST(PointSuite, multiplicationAssignmentOperator3DPoint)
     unsigned short yTotal = y1 * y2;
     unsigned short zTotal = z1 * z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     p1 *= p2;
 
@@ -667,8 +667,8 @@ TEST(PointSuite, divisionAssignmentOperator2DScalar)
     unsigned short xTotal = x1 / scalar;
     unsigned short yTotal = y1 / scalar;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(xTotal, yTotal);
 
     p1 /= scalar;
 
@@ -685,9 +685,9 @@ TEST(PointSuite, divisionAssignmentOperator2DPoint)
     unsigned short xTotal = x1 / x2;
     unsigned short yTotal = y1 / y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
-    Point<unsigned short, 2> p3(xTotal, yTotal);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p3(xTotal, yTotal);
 
     p1 /= p2;
 
@@ -705,8 +705,8 @@ TEST(PointSuite, divisionAssignmentOperator3DScalar)
     unsigned short yTotal = y1 / scalar;
     unsigned short zTotal = z1 / scalar;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(xTotal, yTotal, zTotal);
 
     p1 /= scalar;
 
@@ -726,9 +726,9 @@ TEST(PointSuite, divisionAssignmentOperator3DPoint)
     unsigned short yTotal = y1 / y2;
     unsigned short zTotal = z1 / z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
-    Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p3(xTotal, yTotal, zTotal);
 
     p1 /= p2;
 
@@ -744,8 +744,8 @@ TEST(PointSuite, dotProduct2D)
 
     unsigned short result = x1 * x2 + y1 * y2;
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
 
     ASSERT_EQ(p1.dotProduct(p2), result);
 }
@@ -761,8 +761,8 @@ TEST(PointSuite, dotProduct3D)
 
     unsigned short result = x1 * x2 + y1 * y2 + z1 * z2;
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
     ASSERT_EQ(p1.dotProduct(p2), result);
 }
 
@@ -772,7 +772,7 @@ TEST(PointSuite, magnitude2D)
     unsigned short y1 = 1;
 
     unsigned short result = std::sqrt(std::pow(x1, 2) + std::pow(y1, 2));
-    Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p1(x1, y1);
 
     ASSERT_EQ(p1.magnitude(), result);
 }
@@ -784,7 +784,7 @@ TEST(PointSuite, magnitude3D)
     unsigned short z1 = 7;
 
     unsigned short result = std::sqrt(std::pow(x1, 2) + std::pow(y1, 2) + std::pow(z1, 2));
-    Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
 
     ASSERT_EQ(p1.magnitude(), result);
 }
@@ -801,8 +801,8 @@ TEST(PointSuite, cosineSim2D)
     unsigned short magnitudeP2 = std::sqrt(std::pow(x2, 2) + std::pow(y2, 2));
     unsigned short result = dotProduct / (magnitudeP1 * magnitudeP2);
 
-    Point<unsigned short, 2> p1(x1, y1);
-    Point<unsigned short, 2> p2(x2, y2);
+    Base::Point<unsigned short, 2> p1(x1, y1);
+    Base::Point<unsigned short, 2> p2(x2, y2);
 
     ASSERT_EQ(p1.cosineSim(p2), result);
 }
@@ -821,8 +821,8 @@ TEST(PointSuite, cosineSim3D)
     unsigned short magnitudeP2 = std::sqrt(std::pow(x2, 2) + std::pow(y2, 2) + std::pow(z2, 2));
     unsigned short result = dotProduct / (magnitudeP1 * magnitudeP2);
 
-    Point<unsigned short, 3> p1(x1, y1, z1);
-    Point<unsigned short, 3> p2(x2, y2, z2);
+    Base::Point<unsigned short, 3> p1(x1, y1, z1);
+    Base::Point<unsigned short, 3> p2(x2, y2, z2);
 
     ASSERT_EQ(p1.cosineSim(p2), result);
 }

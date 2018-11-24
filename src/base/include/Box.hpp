@@ -5,29 +5,35 @@
 
 #include <Point.hpp>
 
-template <typename T, std::size_t D>
-class Box
+namespace Base
 {
-    public:
-    explicit Box(const Point<T, D>& p1, const Point<T, D>& p2);
+    template <typename T, std::size_t D>
+    class Box
+    {
+        public:
+        explicit Box(const Point<T, D>& p1, const Point<T, D>& p2);
 
-    bool fits(const Box<T, D>& otherBox) const;
+        bool fits(const Box<T, D>& otherBox) const;
 
-    Point<T, D>& operator[](std::size_t index);
+        bool fits(const Point<T, D>& point) const;
 
-    T area() const;
+        Point<T, D>& operator[](std::size_t index);
 
-    T length() const;
+        T area() const;
 
-    T width() const;
+        T length() const;
 
-    T depth() const;
+        T width() const;
 
-    const Point<T, D>& operator[](std::size_t index) const;
-    private:
-    std::array<Point<T, D>, 2> points;
-};
+        T depth() const;
 
+        const std::array<Point<T, D>, 2>& getPoints() const;
+
+        const Point<T, D>& operator[](std::size_t index) const;
+        private:
+        std::array<Point<T, D>, 2> points;
+    };
+}
 #include "Box.ipp"
 
 #endif //BOX_HPP

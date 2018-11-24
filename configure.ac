@@ -15,7 +15,6 @@ AC_PROG_CPP
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
-AC_PROG_RANLIB
 AC_PROG_MKDIR_P
 AX_CXX_COMPILE_STDCXX_17([noext], [mandatory])
 
@@ -117,7 +116,7 @@ AC_CONFIG_FILES([Makefile
                  src/base/Makefile
                  src/app/Makefile
                  src/n_tree/Makefile
-				 googletest/Makefile
+				 gtest/Makefile
 				 tests/Makefile])
 AC_OUTPUT
 

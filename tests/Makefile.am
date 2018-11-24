@@ -1,8 +1,8 @@
 AM_CPPFLAGS = -isystem $(top_srcdir)/lib/gtest/include -I$(top_srcdir)/src/n_tree/include $(GTEST_CPPFLAGS)
 AM_CXXFLAGS = $(GTEST_CXXFLAGS) $(libn_tree_la_CXXFLAGS)
 AM_LDFLAGS = $(GTEST_LDFLAGS) $(GTEST_LIBS) \
-	     $(top_builddir)/googletest/lib/libgtest_main.la \
-	     $(top_builddir)/googletest/lib/libgtest.la \
+	     $(top_builddir)/gtest/lib/libgtest_main.la \
+	     $(top_builddir)/gtest/lib/libgtest.la \
 		 $(libn_tree_la_DESTINATION)
 
 # TESTS -- Programs run automatically by "make check"
