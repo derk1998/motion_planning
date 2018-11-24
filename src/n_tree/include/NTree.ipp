@@ -17,30 +17,26 @@ namespace NTree
     */
     template <typename T, std::size_t D>
     bool NTree<T, D>::insert(Element& element)
-    {
+    {   
+        //Check if element fits. Note that the function has to be implemented in the Box class.
         bool fits = std::visit([this](auto&& arg){return box.fits(arg);}, element);
         if(!fits)
         {
-            std::cout << "Move this obstacle to the parent!" << std::endl;
             if(!parent) throw std::runtime_error("The obstacle does not fit in this box and there is no parent box!");
             return false;
         }
-        if(!_split && box.area() >= 4) split();
+        //Split if the element fits, the box hasn't been splitted and it is splittable.
+        if(!_split && box.area() >= (1 << D)) split();
 
+        //Try to recursively insert the element to one of the children.
         for(auto& child : children)
         {
             if(!child) continue;
             if(child->insert(element)) return true;
         }
-        
-        std::cout << "Ok putting this obstacle in the parent!" << std::endl;
-        elements.push_back(element);
 
-        for(auto const& child : children)
-        {
-            if(!child) continue;
-            std::cout << child << std::endl;
-        }
+        //Finally, add the element to the elements.
+        elements.push_back(element);
         return true;
     }
 
