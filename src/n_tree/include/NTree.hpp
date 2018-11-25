@@ -26,8 +26,11 @@ namespace NTree
 
       std::set<Base::Point<T, D>> getVertices() const;
 
+      std::set<Base::Edge<T, D>> getEdges() const;
+
       private:
       std::set<Base::Point<T, D>> getVertices(std::set<Base::Point<T, D>>& currentVertices) const;
+      std::set<Base::Edge<T, D>> getEdges(std::set<Base::Edge<T, D>>& currentEdges) const;
       void clearChildren();
       void split();
       Base::Box<T, D> box;

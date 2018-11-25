@@ -80,6 +80,31 @@ namespace NTree
     }
 
     template <typename T, std::size_t D>
+    std::set<Base::Edge<T, D>> NTree<T, D>::getEdges() const
+    {
+        std::set<Base::Edge<T, D>> edges;
+        return getEdges(edges);
+    }
+
+    template <typename T, std::size_t D>
+    std::set<Base::Edge<T, D>> NTree<T, D>::getEdges(std::set<Base::Edge<T, D>>& currentEdges) const
+    {
+        //Get the edges of this box
+        auto edges = box.getEdges();
+        currentEdges.insert(std::begin(edges), std::end(edges));
+
+        //Get vertices of each child
+        for(auto& child : children)
+        {
+            if(!child) continue;
+            currentEdges = child->getEdges(currentEdges);
+        }
+        return currentEdges;
+    }
+
+    
+
+    template <typename T, std::size_t D>
     void NTree<T, D>::split()
     {
         std::cout << "Split!" << std::endl;

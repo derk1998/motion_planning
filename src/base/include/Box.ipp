@@ -83,4 +83,19 @@ namespace Base
 
         return result;
     }
+
+    template <typename T, std::size_t D>
+    std::set<Edge<T, D>> Box<T, D>::getEdges() const
+    {
+        std::set<Edge<T, D>> edges;
+        auto points = getPoints();
+        for(std::size_t i = 0; i < 1 << D; ++i)
+        {
+            for(std::size_t j = 1; j < 1 << D; ++j)
+            {
+                if(points[i] != points[j]) edges.insert(Edge(points[i], points[j]));
+            }
+        }
+        return edges;
+    }
 }

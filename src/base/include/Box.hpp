@@ -2,8 +2,10 @@
 #define BOX_HPP
 
 #include <array>
+#include <set>
 
 #include <Point.hpp>
+#include <Edge.hpp>
 
 namespace Base
 {
@@ -28,6 +30,8 @@ namespace Base
         T depth() const;
 
         std::array<Point<T, D>, 1 << D > getPoints() const;
+
+        std::set<Edge<T, D>> getEdges() const;
 
         const Point<T, D>& operator[](std::size_t index) const;
         private:

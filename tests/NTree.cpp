@@ -19,6 +19,12 @@ TEST(NTreeSuite, test)
     {
       std::cout << vertice << std::endl;
     }
+
+    auto edges = nTree.getEdges();
+    for(auto edge : edges)
+    {
+      std::cout << edge.p1 << "\t->\t" << edge.p2 << std::endl;
+    }
 }
 
 int main(int argc, char **argv)

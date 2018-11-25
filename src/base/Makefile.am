@@ -5,6 +5,7 @@ libbase_la_CXXFLAGS = $(AM_CXXFLAGS) $(MOTION_PLANNING_CXXFLAGS)
 include_HEADERS = include/Box.hpp \
                   include/Point.hpp \
                   include/Box.ipp \
-                  include/Point.ipp
+                  include/Point.ipp \
+                  include/Edge.hpp
 libbase_la_LDFLAGS = -version-info 0:0:0
 libbase_la_DESTINATION = $(abs_srcdir)/$(lib_LTLIBRARIES)
