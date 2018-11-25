@@ -27,7 +27,7 @@ namespace Base
 
         T depth() const;
 
-        const std::array<Point<T, D>, 2>& getPoints() const;
+        std::array<Point<T, D>, 1 << D > getPoints() const;
 
         const Point<T, D>& operator[](std::size_t index) const;
         private:

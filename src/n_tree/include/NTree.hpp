@@ -23,13 +23,15 @@ namespace NTree
 
       const Base::Box<T, D>& getBox() const;
 
+      std::vector<Base::Point<T, D>> getVertices() const;
+
       private:
+      std::vector<Base::Point<T, D>> getVertices(std::vector<Base::Point<T, D>>& currentVertices) const;
       void clearChildren();
       void split();
       Base::Box<T, D> box;
       std::array<std::unique_ptr<NTree>, 1 << D> children;
       NTree* parent;
-      bool occupied;
       bool _split;
       std::vector<Element> elements;
   };

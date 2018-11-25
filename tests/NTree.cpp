@@ -13,7 +13,12 @@ TEST(NTreeSuite, test)
     NTree::NTree<std::size_t, 2>::Element box2Element = box2;
 
     nTree.insert(boxElement);
-    nTree.insert(box2Element);
+
+    auto vertices = nTree.getVertices();
+    for(auto vertice : vertices)
+    {
+      std::cout << vertice << std::endl;
+    }
 }
 
 int main(int argc, char **argv)

@@ -66,8 +66,21 @@ namespace Base
     }
 
     template <typename T, std::size_t D>
-    const std::array<Point<T, D>, 2>& Box<T, D>::getPoints() const
+    std::array<Point<T, D>, 1 << D > Box<T, D>::getPoints() const
     {
-        return points;
+        Point<T, D> left = points[0] < points[1] ? points[0] : points[1];
+        Point<T, D> right = points[0] > points[1] ? points[0] : points[1];
+        std::array<Point<T, D>, 1 << D > result;
+        std::array<Point<T, D>, 2> tmpPoints{left, right};
+
+        Point<T, D> tmpPoint;
+        for(std::size_t i = 0; i < 1 << D; ++i)
+        {
+            for(std::size_t j = 0; j < D; ++j)
+                tmpPoint[j] = tmpPoints[(i >> j) % 2][j];
+            result[i] = tmpPoint;
+        }
+
+        return result;
     }
 }

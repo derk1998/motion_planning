@@ -57,6 +57,29 @@ namespace NTree
     }
 
     template <typename T, std::size_t D>
+    std::vector<Base::Point<T, D>> NTree<T, D>::getVertices() const
+    {
+        std::vector<Base::Point<T, D>> vertices;
+        return getVertices(vertices);
+    }
+
+    template <typename T, std::size_t D>
+    std::vector<Base::Point<T, D>> NTree<T, D>::getVertices(std::vector<Base::Point<T, D>>& currentVertices) const
+    {
+        //Get the vertices of this box
+        auto vertices = box.getPoints();
+        currentVertices.insert(std::end(currentVertices), std::begin(vertices), std::end(vertices));
+
+        //Get vertices of each child
+        for(auto& child : children)
+        {
+            if(!child) continue;
+            currentVertices = child->getVertices(currentVertices);
+        }
+        return currentVertices;
+    }
+
+    template <typename T, std::size_t D>
     void NTree<T, D>::split()
     {
         std::cout << "Split!" << std::endl;
