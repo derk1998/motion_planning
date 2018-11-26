@@ -49,6 +49,18 @@ namespace NTree
   {
     return os << rhs->getBox()[0] << " -> " << rhs->getBox()[1];
   }
+
+  template<typename T>
+  using QuadTree = NTree<T, 2>;
+
+  template<typename T>
+  using Octree = NTree<T, 3>;
+
+  template<typename T>
+  using QuadTreeElement = typename NTree<T, 2>::Element;
+
+  template<typename T>
+  using OctreeElement = typename NTree<T, 3>::Element;
 }
 #include "NTree.ipp"
 

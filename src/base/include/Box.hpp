@@ -37,6 +37,12 @@ namespace Base
         private:
         std::array<Point<T, D>, 2> points;
     };
+
+    template <typename T>
+    using Box2D = Box<T, 2>;
+    
+    template <typename T>
+    using Box3D = Box<T, 3>;
 }
 #include "Box.ipp"
 

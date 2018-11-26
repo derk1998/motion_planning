@@ -7,14 +7,6 @@ namespace NTree
     {
     }
     
-    //neighbour checking
-
-    /*
-
-    find cell of S
-    add cell to set
-
-    */
     template <typename T, std::size_t D>
     bool NTree<T, D>::insert(Element& element)
     {   
@@ -102,31 +94,12 @@ namespace NTree
         return currentEdges;
     }
 
-    
-
     template <typename T, std::size_t D>
     void NTree<T, D>::split()
     {
-        std::cout << "Split!" << std::endl;
         Base::Point<T, D> center;
         for(std::size_t i = 0; i < D; ++i)
             center[i] = (box[0][i] + box[1][i]) / 2;
-            
-        //2D
-        //LT = p1.x, p1.y
-        //RT = p2.x, p1.y
-        //LB = p1.x, p2.y
-        //RB = p2.x, p2.y
-
-        //3D
-        //LTB = p1.x, p1.y, p1.z
-        //RTB = p2.x, p1.y, p1.z
-        //LBB = p1.x, p2.y, p1.z
-        //RBB = p2.x, p2.y, p1.z
-        //LTF = p1.x, p1.y, p2.z
-        //RTF = p2.x, p1.y, p2.z
-        //LBF = p1.x, p2.y, p2.z
-        //RBF = p2.x, p2.y, p2.z
 
         Base::Point<T, D> tmpPoint;
         for(std::size_t i = 0; i < children.size(); ++i)

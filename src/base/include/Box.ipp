@@ -89,9 +89,9 @@ namespace Base
     {
         std::set<Edge<T, D>> edges;
         auto points = getPoints();
-        for(std::size_t i = 0; i < 1 << D; ++i)
+        for(std::size_t i = 0; i < (1 << D) - 1; ++i)
         {
-            for(std::size_t j = 1; j < 1 << D; ++j)
+            for(std::size_t j = i + 1; j < 1 << D; ++j)
             {
                 if(points[i] != points[j]) edges.insert(Edge(points[i], points[j]));
             }

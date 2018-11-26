@@ -3,14 +3,14 @@
 
 TEST(NTreeSuite, test)
 {
-    Base::Point<std::size_t, 2> tl;
-    Base::Point<std::size_t, 2> br(7, 5);
+    Base::Point2D<std::size_t> tl;
+    Base::Point2D<std::size_t> br(7, 5);
 
-    NTree::NTree<std::size_t, 2> nTree(Base::Box<std::size_t, 2>(tl, br));
-    Base::Box<std::size_t, 2> box(Base::Point<std::size_t, 2>(0,0), Base::Point<std::size_t, 2>(2,2));
-    Base::Box<std::size_t, 2> box2(Base::Point<std::size_t, 2>(6,3), Base::Point<std::size_t, 2>(7,5));
-    NTree::NTree<std::size_t, 2>::Element boxElement = box;
-    NTree::NTree<std::size_t, 2>::Element box2Element = box2;
+    NTree::QuadTree<std::size_t> nTree(Base::Box2D<std::size_t>(tl, br));
+    Base::Box2D<std::size_t> box(Base::Point2D<std::size_t>(0,0), Base::Point2D<std::size_t>(2,2));
+    Base::Box2D<std::size_t> box2(Base::Point2D<std::size_t>(6,3), Base::Point2D<std::size_t>(7,5));
+    NTree::QuadTreeElement<std::size_t> boxElement = box;
+    NTree::QuadTreeElement<std::size_t> box2Element = box2;
 
     nTree.insert(boxElement);
 

@@ -292,6 +292,12 @@ namespace Base
     os << ")";
     return os;
   }
+
+  template <typename T>
+  using Point2D = Point<T, 2>;
+
+  template <typename T>
+  using Point3D = Point<T, 3>;
 }
 #include "Point.ipp"
 
