@@ -49,17 +49,17 @@ namespace NTree
     }
 
     template <typename T, std::size_t D>
-    std::set<Base::Point<T, D>> NTree<T, D>::getVertices() const
+    std::set<Base::Vertex<T, D>> NTree<T, D>::getVertices() const
     {
-        std::set<Base::Point<T, D>> vertices;
+        std::set<Base::Vertex<T, D>> vertices;
         return getVertices(vertices);
     }
 
     template <typename T, std::size_t D>
-    std::set<Base::Point<T, D>> NTree<T, D>::getVertices(std::set<Base::Point<T, D>>& currentVertices) const
+    std::set<Base::Vertex<T, D>> NTree<T, D>::getVertices(std::set<Base::Vertex<T, D>>& currentVertices) const
     {
         //Get the vertices of this box
-        auto vertices = box.getPoints();
+        auto vertices = box.getVertices();
         currentVertices.insert(std::begin(vertices), std::end(vertices));
 
         //Get vertices of each child

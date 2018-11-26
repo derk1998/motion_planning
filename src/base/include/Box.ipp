@@ -66,19 +66,19 @@ namespace Base
     }
 
     template <typename T, std::size_t D>
-    std::array<Point<T, D>, 1 << D > Box<T, D>::getPoints() const
+    std::array<Vertex<T, D>, 1 << D > Box<T, D>::getVertices() const
     {
-        Point<T, D> left = points[0] < points[1] ? points[0] : points[1];
-        Point<T, D> right = points[0] > points[1] ? points[0] : points[1];
-        std::array<Point<T, D>, 1 << D > result;
-        std::array<Point<T, D>, 2> tmpPoints{left, right};
+        Vertex<T, D> left = points[0] < points[1] ? Vertex<T, D>(points[0]) : Vertex<T, D>(points[1]);
+        Vertex<T, D> right = points[0] > points[1] ? Vertex<T, D>(points[0]) : Vertex<T, D>(points[1]);
+        std::array<Vertex<T, D>, 1 << D > result;
+        std::array<Vertex<T, D>, 2> tmpVertices{left, right};
 
-        Point<T, D> tmpPoint;
+        Vertex<T, D> tmpVertice;
         for(std::size_t i = 0; i < 1 << D; ++i)
         {
             for(std::size_t j = 0; j < D; ++j)
-                tmpPoint[j] = tmpPoints[(i >> j) % 2][j];
-            result[i] = tmpPoint;
+                tmpVertice[j] = tmpVertices[(i >> j) % 2][j];
+            result[i] = tmpVertice;
         }
 
         return result;
@@ -88,12 +88,12 @@ namespace Base
     std::set<Edge<T, D>> Box<T, D>::getEdges() const
     {
         std::set<Edge<T, D>> edges;
-        auto points = getPoints();
+        auto vertices = getVertices();
         for(std::size_t i = 0; i < (1 << D) - 1; ++i)
         {
             for(std::size_t j = i + 1; j < 1 << D; ++j)
             {
-                if(points[i] != points[j]) edges.insert(Edge(points[i], points[j]));
+                if(vertices[i] != vertices[j]) edges.insert(Edge(vertices[i], vertices[j]));
             }
         }
         return edges;

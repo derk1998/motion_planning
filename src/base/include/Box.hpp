@@ -29,12 +29,13 @@ namespace Base
 
         T depth() const;
 
-        std::array<Point<T, D>, 1 << D > getPoints() const;
-
         std::set<Edge<T, D>> getEdges() const;
+
+        std::array<Vertex<T, D>, 1 << D > getVertices() const;
 
         const Point<T, D>& operator[](std::size_t index) const;
         private:
+
         std::array<Point<T, D>, 2> points;
     };
 

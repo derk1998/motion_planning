@@ -17,13 +17,13 @@ TEST(NTreeSuite, test)
     auto vertices = nTree.getVertices();
     for(auto vertice : vertices)
     {
-      std::cout << vertice << std::endl;
+      std::cout << vertice.getPoint() << std::endl;
     }
 
     auto edges = nTree.getEdges();
     for(auto edge : edges)
     {
-      std::cout << edge.p1 << "\t->\t" << edge.p2 << std::endl;
+      std::cout << edge.getFrom().getPoint() << "\t->\t" << edge.getTo().getPoint() << std::endl;
     }
 }
 
