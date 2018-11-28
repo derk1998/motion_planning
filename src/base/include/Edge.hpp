@@ -13,8 +13,9 @@ namespace Base
 
         bool operator<(const Edge<T, D>& rhs) const;
 
-        const Vertex<T, D> getFrom() const;
-        const Vertex<T, D> getTo() const;
+        const Vertex<T, D>& getFrom() const;
+        const Vertex<T, D>& getTo() const;
+        const Vertex<T, D>& getOther(const Vertex<T, D>& vertex) const;
 
         Vertex<T, D> v1;
         Vertex<T, D> v2;

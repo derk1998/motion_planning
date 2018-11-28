@@ -116,6 +116,7 @@ AC_CONFIG_FILES([Makefile
                  src/base/Makefile
                  src/app/Makefile
                  src/n_tree/Makefile
+				 src/pathfinding/Makefile
 				 gtest/Makefile
 				 tests/Makefile])
 AC_OUTPUT

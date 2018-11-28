@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <NTree.hpp>
+#include <AStar.hpp>
 
 TEST(NTreeSuite, test)
 {
@@ -25,6 +26,15 @@ TEST(NTreeSuite, test)
     {
       std::cout << edge.getFrom().getPoint() << "\t->\t" << edge.getTo().getPoint() << std::endl;
     }
+
+    Pathfinding::AStar<std::size_t, 2> AStar;
+    auto path = AStar.search(Base::Vertex<std::size_t, 2>(0,0), Base::Vertex<std::size_t, 2>(7,2), edges);
+
+    for(auto& node : path)
+    {
+      std::cout << node.getPoint() << std::endl;
+    }
+
 }
 
 int main(int argc, char **argv)

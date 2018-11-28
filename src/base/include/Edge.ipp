@@ -12,14 +12,20 @@ namespace Base
     }
 
     template <typename T, std::size_t D>
-    const Vertex<T, D> Edge<T, D>::getFrom() const
+    const Vertex<T, D>& Edge<T, D>::getFrom() const
     {
         return v1;
     }
 
     template <typename T, std::size_t D>
-    const Vertex<T, D> Edge<T, D>::getTo() const
+    const Vertex<T, D>& Edge<T, D>::getTo() const
     {
         return v2;
+    }
+
+    template <typename T, std::size_t D>
+    const Vertex<T, D>& Edge<T, D>::getOther(const Vertex<T, D>& vertex) const
+    {
+        return (vertex == v1) ? v2 : v1;
     }
 }
