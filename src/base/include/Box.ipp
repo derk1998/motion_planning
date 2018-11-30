@@ -50,10 +50,10 @@ namespace Base
     bool Box<T, D>::fits(const Box<T, D>& otherBox) const
     {
         Point<T, D> left = points[0] < points[1] ? points[0] : points[1];
-        Point<T, D> right = points[0] > points[1] ? points[0] : points[1];
-
-        return (otherBox.points[0] >= left && otherBox.points[0] <= right &&
-        otherBox.points[1] >= left && otherBox.points[1] <= right);
+        Point<T, D> right = (left == points[0]) ? points[1] : points[0];
+        Point<T, D> rhsLeft = (otherBox[0] < otherBox[1]) ? otherBox[0] : otherBox[1];
+        Point<T, D> rhsRight = (rhsLeft == otherBox[0]) ? otherBox[1] : otherBox[0];
+        return ((rhsLeft > left && rhsLeft < right) && (rhsRight > left && rhsRight < right));
     }
 
     template <typename T, std::size_t D>

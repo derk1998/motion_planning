@@ -80,7 +80,7 @@ AC_ARG_ENABLE([gcc-warnings],
         *)      AC_MSG_ERROR([bad value ${enableval} for gcc-warnings option]) ;; 
     esac
     gcc_warnings=$enableval],
-    [gcc_warnings=no]
+    [gcc_warnings=yes]
 )
 AC_MSG_RESULT([$gcc_warnings])
 if test "$gcc_warnings" = yes; then
@@ -97,7 +97,7 @@ AC_ARG_ENABLE([gcc-debug],
 		*)		AC_MSG_ERROR([bad value ${enableval} for gcc-debug option]) ;; 
 	esac
 	gcc_debug=$enableval],
-	[gcc_debug=no]
+	[gcc_debug=yes]
 )
 AC_MSG_RESULT([$gcc_debug])
 if test "$gcc_debug" = yes; then

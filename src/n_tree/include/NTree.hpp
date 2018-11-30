@@ -31,6 +31,7 @@ namespace NTree
       private:
       std::set<Base::Vertex<T, D>> getVertices(std::set<Base::Vertex<T, D>>& currentVertices) const;
       std::set<Base::Edge<T, D>> getEdges(std::set<Base::Edge<T, D>>& currentEdges) const;
+      bool isPrimeNumber(T number) const;
       void clearChildren();
       void split();
       Base::Box<T, D> box;
