@@ -296,8 +296,12 @@ namespace Base
   template <typename T>
   using Point2D = Point<T, 2>;
 
+  using Point2Ds = Point2D<std::size_t>;
+
   template <typename T>
   using Point3D = Point<T, 3>;
+
+  using Point3Ds = Point3D<std::size_t>;
 }
 #include "Point.ipp"
 

@@ -24,11 +24,13 @@ namespace Pathfinding
             if(current == goal) return constructPath(current);
             
             closedSet.insert(current);
+            std::cout << "CURRENT: " << current.getPoint() << std::endl;
             openSet.erase(current);
 
             auto connections = getNeighbourConnections(current, edges);
             for(auto& connection : connections)
             {
+                // std::cout << "CONNECTION >>> from: " << connection.getFrom().getPoint() << " to: " << connection.getTo().getPoint();
                 auto neighbour = connection.getOther(current);
                 if(closedSet.find(neighbour) != std::end(closedSet)) continue;
                 
@@ -66,7 +68,10 @@ namespace Pathfinding
         std::set<Base::Vertex<T, D>> result;
         for(const auto& edge : edges)
         {
-            if(vertex == edge.getFrom()) result.insert(edge.getTo());
+            if(vertex == edge.getFrom())
+            {
+                result.insert(edge.getTo());
+            }
         }
         return result;
     }

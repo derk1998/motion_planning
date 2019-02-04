@@ -37,9 +37,16 @@ namespace Base
   bool Point<T, N>::operator<(const Point<T, N>& rhs) const
   {
     if(&rhs == this) return false;
-    for(std::size_t i = 0; i < N - 1; ++i)
-      if(data[i] != rhs.data[i]) return data[i] < rhs.data[i];
-    return data[N-1] < rhs.data[N-1];
+    for(std::size_t i = N - 1; i > 0; --i)
+    {
+      if(data[i] != rhs.data[i])
+        return data[i] < rhs.data[i];
+    }
+    return data[0] < rhs.data[0];
+    // if(&rhs == this) return false;
+    // for(std::size_t i = 0; i < N - 1; ++i)
+    //   if(data[i] != rhs.data[i]) return data[i] < rhs.data[i];
+    // return data[N-1] < rhs.data[N-1];
   }
 
   template <typename T, std::size_t N>

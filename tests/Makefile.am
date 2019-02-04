@@ -19,3 +19,7 @@ n_tree_test_LDADD = $(libn_tree_la_DESTINATION)
 TESTS += point_test
 check_PROGRAMS += point_test
 point_test_SOURCES = Point.cpp
+
+TESTS += box_test
+check_PROGRAMS += box_test
+box_test_SOURCES = Box.cpp
